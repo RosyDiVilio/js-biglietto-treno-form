@@ -21,22 +21,27 @@
         </div>
 
         <!--inserimento dati-->
-        <form action="">
+        <form action="" id="calculator">
             <div>
                 <div class="container mb-4 col-7 text-secondary">
                     <label for="kmnumber" class="form-label">Km</label>
-                    <input type="number" placeholder="Inserisci i km che devi percorrere" class="form-control"
+                    <input type="text" placeholder="Inserisci i km che devi percorrere" class="form-control"
                         id="kmnumber">
                 </div>
                 <div class="container mb-5 col-7 text-secondary">
-                    <label for="age" class="form-label">Età</label>
-                    <input type="number" placeholder="Inserisci la tua età" class="form-control" id="age">
+                    <label for="userage" class="form-label">Età</label>
+                    <input type="text" placeholder="Inserisci la tua età" class="form-control" id="userage">
                 </div>
             </div>
             <div class="container col-7">
                 <button class="btn btn-info text-white">Calcola</button>
             </div>
         </form>
+    </div>
+    <div class="col-8 mx-auto m-2 p-4 bg-success-subtle rounded d-none" id="result-container">
+        <h3 id="result">Biglietto: &euro;</h3>
+        <div id="result-km"></div>
+        <div id="result-age"></div>
     </div>
     <script src="js/main.js"></script>
 </body>
