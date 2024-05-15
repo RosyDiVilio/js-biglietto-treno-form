@@ -1,33 +1,40 @@
 'use strict'
 
+const kmNumber = document.getElementById('kmnumber');
+const age = document.getElementById('userage');
+
+const kmPrice = 0.21;
+const userUnder = 18;
+const userOver = 65;
+const discount20 = 20;
+const discount40 = 40;
+
 calculator.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const kmNumber = document.getElementById('kmnumber');
-    const age = document.getElementById('userage');
-    console.log(kmNumber.value);
-    console.log(age.value);
+    const kmNumberInput = Number(kmNumber.value);
+    const ageInput = Number(age.value);
+    console.log(kmNumberInput);
+    console.log(ageInput);
 
-    let molt = (kmNumber.value * parseFloat(0.21));
-    let discount20 = (molt * 20) / 100;
-    let discount40 = (molt * 40) / 100;
+    let price = kmNumberInput * kmPrice;
+    console.log(price);
 
-    if (age < 18) {
+    if (ageInput < userUnder) {
         console.log('il cliente ha diritto ad uno sconto del 20%');
-        document.getElementById('result').innerHTML = (molt - discount20).toFixed(2);
-    } else if (age > 65) {
+        price -= (price * discount20) / 100;
+    } else if (ageInput > userOver) {
         console.log('il cliente ha diritto ad uno sconto del 40%');
-        document.getElementById('result').innerHTML = (molt - discount40).toFixed(2);
+        price -= (price * discount40) / 100;
     } else {
         console.log('paga prezzo pieno');
-        document.getElementById('result').innerHTML = (molt).toFixed(2);
     };
 
-    console.log(molt);
+    console.log(price);
 
-    document.getElementById('result').innerHTML = molt;
-    document.getElementById('result-km').innerHTML = kmNumber.value;
-    document.getElementById('result-age').innerHTML = age.value;
+    document.getElementById('result').innerText = price;
+    document.getElementById('result-km').innerText = kmNumber.value;
+    document.getElementById('result-age').innerText = age.value;
     document.getElementById('result-container').classList.remove('d-none');
 })
 

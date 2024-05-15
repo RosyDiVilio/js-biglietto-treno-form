@@ -25,12 +25,12 @@
             <div>
                 <div class="container mb-4 col-7 text-secondary">
                     <label for="kmnumber" class="form-label">Km</label>
-                    <input type="text" placeholder="Inserisci i km che devi percorrere" class="form-control"
+                    <input type="number" placeholder="Inserisci i km che devi percorrere" class="form-control"
                         id="kmnumber">
                 </div>
                 <div class="container mb-5 col-7 text-secondary">
                     <label for="userage" class="form-label">Età</label>
-                    <input type="text" placeholder="Inserisci la tua età" class="form-control" id="userage">
+                    <input type="number" placeholder="Inserisci la tua età" class="form-control" id="userage">
                 </div>
             </div>
             <div class="container col-7">
@@ -39,9 +39,12 @@
         </form>
     </div>
     <div class="col-8 mx-auto m-2 p-4 bg-success-subtle rounded d-none" id="result-container">
-        <h3 id="result">Biglietto: &euro;</h3>
-        <div id="result-km"></div>
-        <div id="result-age"></div>
+        <h4>Biglietto: &euro;</h4>
+        <span id="result"></span>
+        <h4>Km percorsi:</h4>
+        <span id="result-km"></span>
+        <h4>Età:</h4>
+        <span id="result-age"></span>
     </div>
     <script src="js/main.js"></script>
 </body>
