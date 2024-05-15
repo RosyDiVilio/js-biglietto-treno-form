@@ -18,7 +18,7 @@ calculator.addEventListener('submit', function (event) {
     console.log(ageInput);
 
     let price = kmNumberInput * kmPrice;
-    console.log(price);
+    console.log((price).toFixed(2));
 
     if (ageInput < userUnder) {
         console.log('il cliente ha diritto ad uno sconto del 20%');
@@ -30,9 +30,9 @@ calculator.addEventListener('submit', function (event) {
         console.log('paga prezzo pieno');
     };
 
-    console.log(price);
+    console.log((price).toFixed(2));
 
-    document.getElementById('result').innerText = price;
+    document.getElementById('result').innerText = price.toFixed(2);
     document.getElementById('result-km').innerText = kmNumber.value;
     document.getElementById('result-age').innerText = age.value;
     document.getElementById('result-container').classList.remove('d-none');
